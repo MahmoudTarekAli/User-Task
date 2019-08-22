@@ -1,0 +1,38 @@
+<mat-toolbar>
+  <span class="fill-remaining-space"></span>
+</mat-toolbar>
+<form [formGroup]="updateInvoiceForm" class="normal-form" (ngSubmit)="onSubmit()">
+  <mat-grid-list cols="2" rowHeight="300px">
+    <mat-grid-tile>
+      <div class="controles-container">
+
+        <mat-form-field>
+          <input formControlName="name" matInput placeholder="name*">
+
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="id" matInput placeholder="id">
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="email" matInput placeholder="email">
+
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="phone" matInput placeholder="phone">
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="status" matInput placeholder="status">
+        </mat-form-field>
+
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="controles-container">
+        <div class="button-row" >
+          <button mat-raised-button color="primary" type="submit" >Submit</button>
+          <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</form>

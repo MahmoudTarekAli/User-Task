@@ -1,9 +1,5 @@
 [
-  { "​name​":"ahmed", "​id​": "​1​",
-    "​email​": "​a@test.com",
-    "​phone​": "​4353453543",
-    "Status" :"active"
-  }​,
+
   { "​name​":"ahmed", "​id​": "​1​",
     "​email​": "​a@test.com",
     "​phone​": "​4353453543",

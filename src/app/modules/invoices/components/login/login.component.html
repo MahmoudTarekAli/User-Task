@@ -1,0 +1,18 @@
+<div class="container-fluid">
+  <div class="row auth__component">
+    <div class="col-md-12 text-center">
+      <div class="auth__form">
+        <div class="auth__content">
+          <h4 class="auth__content__title">Welcome To Clipper Dashboard</h4>
+          <h4 class="auth__content__text">Sign in to Admin</h4>
+        </div>
+        <form [formGroup]="loginForm">
+          <input formControlName="name" matInput placeholder="name*">
+          <div class="submit__btn">
+            <button (click)="login()" >login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
