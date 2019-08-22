@@ -1,0 +1,65 @@
+<mat-toolbar>
+  <h3 style="font-weight: bold">Users</h3>
+  <div class="menu-bar">
+    <button mat-button (click)="onCreate()">
+      Create invoice
+    </button>
+  </div>
+</mat-toolbar>
+<div class="table-container mat-elevation-z10">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> name </th>
+      <td mat-cell *matCellDef="let invoices"> {{invoices.name }} </td>
+
+    </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> id </th>
+      <td mat-cell *matCellDef="let invoices"> {{invoices.id }} </td>
+    </ng-container>
+    <!-- Weight Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> email </th>
+      <td mat-cell *matCellDef="let invoices"> {{invoices.email}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="phone">
+      <th mat-header-cell *matHeaderCellDef> phone </th>
+      <td mat-cell *matCellDef="let invoices"> {{invoices.phone}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef> status </th>
+      <td mat-cell *matCellDef="let invoices"> {{invoices.status}} </td>
+    </ng-container>
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef>{{
+        "actions"
+        }}</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="updateInvoice(element)">
+            <mat-icon>edit</mat-icon>
+            <span>{{ "Edit"  }}</span>
+          </button>
+          <button mat-menu-item (click)="deleteInvoice(element)">
+            <mat-icon>delete</mat-icon>
+            <span>{{ "Delete"  }}</span>
+          </button>
+        </mat-menu>
+      </td>
+    </ng-container>
+
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+</div>
